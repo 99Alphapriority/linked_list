@@ -1,2 +1,2 @@
 # linked_list
-DS linked list prep
+DS linked list prep.
