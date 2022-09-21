@@ -146,6 +146,20 @@ node_t *pop(node_t *head, int idx, int isBack)
 		q->data = 0;
 		free(q);
 	}
+	else
+	{
+		q = head;
+		for(int i = 0; i<idx; i++)
+		{
+			p = q;
+			q = q->next;
+		}
+		p->next = q->next;
+		q->data = 0;
+		q->next = NULL;
+		free(q);
+		
+	}
 	return head;
 
 }

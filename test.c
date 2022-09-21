@@ -77,3 +77,15 @@ void test_pop_back()
 	display(list_p[0]);
 	printf("test_pop_back() finished\n");
 }
+
+void test_erase()
+{
+	int idx;
+	printf("\ntest_erase() started\n");
+	printf("Enter node index to delete: ");
+	scanf("%d", &idx);
+	list_p[0] = pop(list_p[0],idx,0);
+	printf("List after deleting the given node\n");
+	display(list_p[0]);
+	printf("test_erase() finished\n");
+}
