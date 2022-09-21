@@ -164,3 +164,32 @@ node_t *pop(node_t *head, int idx, int isBack)
 
 }
 
+/******************************************************************************
+ * Function name: search
+ * Arguments: *node_t, int
+ * Return Type: void
+ * Desc: Traverse the linked list to search for a given number
+ * ***************************************************************************/
+
+void search(node_t *head, int val)
+{
+	int count = 0;
+	while(head)
+	{
+		if(head->data == val)
+		{
+			printf("Value found at node: %d\n",count);
+			return;
+		}
+		else
+		{
+			count++;
+			head=head->next;
+		}
+	}
+	if(!head)
+	{
+		printf("Given value not found in the list\n");
+	}
+}
+

@@ -19,3 +19,5 @@ void create_list();
 node_t* push();
 //Function to display a linked list
 void display();
+//Function to search the list for a given value
+void search();

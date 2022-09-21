@@ -10,9 +10,8 @@ void run_all_test()
 	test_pop_front();
 	test_pop_back();
 	test_erase();
-#if 0
-	test_value_at();
 	test_search();
+#if 0
 	test_reverse();
 	test_insert_sorted();
 	test_check_sorted();
@@ -88,4 +87,14 @@ void test_erase()
 	printf("List after deleting the given node\n");
 	display(list_p[0]);
 	printf("test_erase() finished\n");
+}
+
+void test_search()
+{
+	int val;
+	printf("\ntest_search() started\n");
+	printf("Enter value to search: ");
+	scanf("%d",&val);
+	search(list_p[0],val);
+	printf("test_search() finished\n");
 }
