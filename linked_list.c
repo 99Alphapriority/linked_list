@@ -86,7 +86,7 @@ void display(node_t *head)
 node_t *push(node_t *head, int idx)
 {
 	node_t *p = NULL, *q = head, *temp = NULL;
-	for(int i = 0; i<idx; idx++)
+	for(int i = 0; i<idx; i++)
 	{
 		p=q;
 		q=q->next;
@@ -99,7 +99,6 @@ node_t *push(node_t *head, int idx)
 		head = temp;
 	else
 	{
-		printf("test");
 		p->next = temp;
 	}
 	return head;

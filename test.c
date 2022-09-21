@@ -5,7 +5,7 @@ void run_all_test()
 {
 	test_size();
 	test_push_front();
-//	test_insert();
+	test_insert();
 #if 0
 	test_pop_front();
 	test_push_back();
@@ -25,7 +25,7 @@ void test_size()
 	printf("\ntest_size() started\n");
 	int size = 0;
 	size = list_size(list_p[0]);
-	printf("The randomly generated Linked list has %d nodes\n",size);
+	printf("The user created Linked list has %d nodes\n",size);
 	printf("test_size() finished\n");
 }
 
@@ -38,23 +38,16 @@ void test_push_front()
 	display(list_p[0]);
 	printf("test_push_front() finished\n");
 }
-/*
+
 void test_insert()
 {
-	printf("test_insert() started\n");
-	node_t *head_p = NULL;
-	int num_node = 0, idx = 0;
-	printf("Enter number of nodes to create\t");
-	scanf("%d",&num_node);
-	head_p = create_list(num_node);
-	printf("List before inserting a new node\n");
-	display(head_p);
+	printf("\ntest_insert() started\n");
+	int idx = 0;
 	printf("Enter index to insert a new node at: ");
 	scanf("%d", &idx);
-	printf("idx %d\n",idx);
-	head_p = push(head_p,3);
+	list_p[0] = push(list_p[0],idx);
 	printf("List after a new node at index %d\n",idx);
-	display(head_p);
+	display(list_p[0]);
 	printf("test_insert() finished\n");
 }
-*/
+
