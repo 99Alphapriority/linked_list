@@ -2,6 +2,7 @@
 #include<time.h>
 #include<stdio.h>
 #include<time.h>
+#include<stdbool.h>
 
 int* list_p[2] = {NULL};
 node_t *head = NULL;
@@ -83,22 +84,31 @@ void display(node_t *head)
  * Desc: Adds a new node in an existing linked list
  * ***************************************************************************/
 
-node_t *push(node_t *head, int idx)
+node_t *push(node_t *head, int idx, int isBack)
 {
 	node_t *p = NULL, *q = head, *temp = NULL;
-	for(int i = 0; i<idx; i++)
-	{
-		p=q;
-		q=q->next;
-	}
 	temp = (node_t*)malloc(sizeof(node_t));
 	printf("Enter value for the node to be inserted: ");
 	scanf("%d",&temp->data);
-	temp->next = q;
-	if(idx == 0)
+	if(isBack)
+	{
+		q = list_p[1];
+		q->next = temp;
+		list_p[1] = temp;
+	}
+	else if(idx == 0)
+	{
+		temp->next = q;
 		head = temp;
+	}
 	else
 	{
+		for(int i = 0; i<idx; i++)
+		{
+			p=q;
+			q=q->next;
+		}
+		temp->next = q;
 		p->next = temp;
 	}
 	return head;
