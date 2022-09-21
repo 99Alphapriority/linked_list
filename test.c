@@ -7,13 +7,12 @@ void run_all_test()
 	test_push_front();
 	test_insert();
 	test_push_back();
-#if 0
 	test_pop_front();
-	test_push_back();
 	test_pop_back();
+	test_erase();
+#if 0
 	test_value_at();
 	test_search();
-	test_erase();
 	test_reverse();
 	test_insert_sorted();
 	test_check_sorted();
@@ -61,3 +60,20 @@ void test_push_back()
 	printf("test_push_back() finished\n");
 }
 	
+void test_pop_front()
+{
+	printf("\ntest_pop_front() started\n");
+	list_p[0] = pop(list_p[0],0,0);
+	printf("List after popping data from the head of the list\n");
+	display(list_p[0]);
+	printf("test_pop_front() finished\n");
+}
+
+void test_pop_back()
+{
+	printf("\ntest_pop_back() started\n");
+	list_p[0] = pop(list_p[0],0,1);
+	printf("List after popping data from the tail of the list\n");
+	display(list_p[0]);
+	printf("test_pop_back() finished\n");
+}

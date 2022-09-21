@@ -114,3 +114,39 @@ node_t *push(node_t *head, int idx, int isBack)
 	return head;
 
 }
+
+/******************************************************************************
+ * Function name: pop
+ * Arguments: *node_t, int
+ * Return Type: *node_t
+ * Desc: Deletes a node from the linked list
+ * ***************************************************************************/
+
+node_t *pop(node_t *head, int idx, int isBack)
+{
+	node_t *p = NULL, *q = NULL;
+
+	if(isBack == 0 && idx == 0)
+	{
+		q = head->next;
+		head->data = 0;
+		head->next = NULL;
+		free(head);
+		head = q;
+	}
+	else if(isBack)
+	{
+		q = head;
+		while(q->next)
+		{
+			p = q;
+			q = q->next;
+		}
+		p->next = NULL;
+		q->data = 0;
+		free(q);
+	}
+	return head;
+
+}
+
