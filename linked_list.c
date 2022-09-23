@@ -223,4 +223,40 @@ void isSorted(node_t *head)
 		}
 	}
 }
-		
+
+/******************************************************************************
+ * Function name: push_sorted
+ * Arguments: *node_t, int
+ * Return Type: *node_t
+ * Desc: Inserts the given value at a sorted position in the linked list
+ * ***************************************************************************/
+
+node_t* push_sorted(node_t *head, int val)
+{
+	node_t *temp = NULL, *p = NULL, *q = head;
+	while(q && (val > q->data))
+	{
+		p = q;
+		q = q->next;
+	}
+
+	temp = (node_t *)malloc(sizeof(node_t));
+	temp->data = val;
+	
+	if(p == NULL)
+	{
+		temp->next = q;
+		head = temp;
+	}
+	else if(q == NULL)
+	{
+		p->next = temp;
+		temp->next = NULL;
+	}
+	else
+	{
+		p->next = temp;
+		temp->next = q;
+	}
+	return head;
+}

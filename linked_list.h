@@ -23,3 +23,5 @@ void display();
 void search();
 //Function to check if the given linked list is sorted
 void isSorted();
+//Function to insert a value at sorted position
+node_t* push_sorted();

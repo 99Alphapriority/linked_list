@@ -1,5 +1,4 @@
 #include<stdlib.h>
-#include<time.h>
 
 void run_all_test()
 {
@@ -13,10 +12,10 @@ void run_all_test()
 	test_erase();
 	test_search();
 	test_check_sorted();
+	test_insert_sorted();
 #endif
 #if 0
 	test_reverse();
-	test_insert_sorted();
 #endif
 }
 
@@ -106,4 +105,16 @@ void test_check_sorted()
 	printf("\ntest_check_sorted() started\n");
 	isSorted(list_p[0]);
 	printf("test_check_sorted() finished\n");
+}
+
+void test_insert_sorted()
+{
+	int num = 0;
+	printf("\ntest_insert_sorted() started\n");
+	printf("Enter value to be inserted into the linked list: ");
+	scanf("%d",&num);
+	list_p[0] = push_sorted(list_p[0], num);
+	printf("Linked list after inserting value at sorted position\n");
+	display(list_p[0]);
+	printf("test_insert_sorted() finished\n");
 }
