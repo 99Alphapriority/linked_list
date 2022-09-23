@@ -55,6 +55,7 @@ void create_list(int num_node)
 		tail = temp;
 	}
        
+	tail->next = NULL;
         list_p[0] = head;
 	list_p[1] = tail;
 }
@@ -193,3 +194,33 @@ void search(node_t *head, int val)
 	}
 }
 
+/******************************************************************************
+ * Function name: isSorted
+ * Arguments: *node_t
+ * Retrun Type: void
+ * Desc: Traverse the linked list to check if it is sorted
+ * ***************************************************************************/
+
+void isSorted(node_t *head)
+{
+	node_t *p = NULL, *q = head;
+	while(1)
+	{
+		p = q;
+		q = q->next;
+
+		if(q->data < p->data)
+		{
+		printf("q: %x\n",q);
+			printf("Linked list is not sorted\n");
+			return;
+		}
+		else if(q->next == NULL)
+		{
+		printf("q: %x\n",q);
+			printf("Linked list is sorted\n");
+			return;
+		}
+	}
+}
+		

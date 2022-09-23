@@ -21,3 +21,5 @@ node_t* push();
 void display();
 //Function to search the list for a given value
 void search();
+//Function to check if the given linked list is sorted
+void isSorted();

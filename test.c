@@ -3,6 +3,7 @@
 
 void run_all_test()
 {
+#if 1
 	test_size();
 	test_push_front();
 	test_insert();
@@ -11,10 +12,11 @@ void run_all_test()
 	test_pop_back();
 	test_erase();
 	test_search();
+	test_check_sorted();
+#endif
 #if 0
 	test_reverse();
 	test_insert_sorted();
-	test_check_sorted();
 #endif
 }
 
@@ -97,4 +99,11 @@ void test_search()
 	scanf("%d",&val);
 	search(list_p[0],val);
 	printf("test_search() finished\n");
+}
+
+void test_check_sorted()
+{
+	printf("\ntest_check_sorted() started\n");
+	isSorted(list_p[0]);
+	printf("test_check_sorted() finished\n");
 }
