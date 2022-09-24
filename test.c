@@ -13,8 +13,6 @@ void run_all_test()
 	test_search();
 	test_check_sorted();
 	test_insert_sorted();
-#endif
-#if 0
 	test_reverse();
 #endif
 }
@@ -117,4 +115,13 @@ void test_insert_sorted()
 	printf("Linked list after inserting value at sorted position\n");
 	display(list_p[0]);
 	printf("test_insert_sorted() finished\n");
+}
+
+void test_reverse()
+{
+	printf("\ntest_reverse() started\n");
+	list_p[0] = reverse(list_p[0]);
+	printf("List after reversing the nodes\n");
+	display(list_p[0]);
+	printf("test_reverse() finished\n");
 }

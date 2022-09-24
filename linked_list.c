@@ -211,7 +211,6 @@ void isSorted(node_t *head)
 
 		if(q->data < p->data)
 		{
-		printf("q: %x\n",q);
 			printf("Linked list is not sorted\n");
 			return;
 		}
@@ -258,5 +257,33 @@ node_t* push_sorted(node_t *head, int val)
 		p->next = temp;
 		temp->next = q;
 	}
+	return head;
+}
+
+/******************************************************************************
+ * Function name: reverse
+ * Arguments: *node_t
+ * Return Type: *node_t
+ * Desc: reverses the orientation of the linked list
+ * ***************************************************************************/
+
+node_t* reverse()
+{
+	node_t *p, *q = head, *r = head->next;
+	while(q != r)
+	{
+		p = q;
+		q = r;
+		if(p == head)
+		{
+			p->next = NULL;
+		}
+		if(r->next != NULL)
+		{
+			r = r->next;
+		}
+		q->next = p;
+	}
+	head = q;
 	return head;
 }

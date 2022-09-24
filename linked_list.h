@@ -25,3 +25,5 @@ void search();
 void isSorted();
 //Function to insert a value at sorted position
 node_t* push_sorted();
+//Function to reverse the linked list
+node_t* reverse();
