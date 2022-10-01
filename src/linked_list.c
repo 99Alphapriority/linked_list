@@ -1,8 +1,4 @@
-#include<stdlib.h>
-#include<time.h>
-#include<stdio.h>
-#include<time.h>
-#include<stdbool.h>
+#include "linked_list.h"
 
 int* list_p[2] = {NULL};
 node_t *head = NULL;

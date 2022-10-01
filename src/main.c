@@ -1,7 +1,8 @@
+#include<stdio.h>
 #include "linked_list.h"
-#include "linked_list.c"
 #include "test.h"
-#include "test.c"
+
+extern int* list_p[2];
 
 int main()
 {
@@ -11,7 +12,6 @@ int main()
 	create_list(Num_of_nodes);
 	printf("All the functions will be performed on the following linked list\n");
 	display(list_p[0]);
-	printf("list_p[0]: %x\n",list_p[0]);
 	run_all_test();
 	return 0;
 }

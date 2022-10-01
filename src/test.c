@@ -1,4 +1,6 @@
-#include<stdlib.h>
+#include "test.h"
+
+extern int *list_p[2];
 
 void run_all_test()
 {
